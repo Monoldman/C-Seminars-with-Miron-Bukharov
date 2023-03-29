@@ -1,0 +1,15 @@
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/bin/Debug/net6.0/task6
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/bin/Debug/net6.0/task6.deps.json
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/bin/Debug/net6.0/task6.runtimeconfig.json
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/bin/Debug/net6.0/task6.dll
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/bin/Debug/net6.0/task6.pdb
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/task6.csproj.AssemblyReference.cache
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/task6.GeneratedMSBuildEditorConfig.editorconfig
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/task6.AssemblyInfoInputs.cache
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/task6.AssemblyInfo.cs
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/task6.csproj.CoreCompileInputs.cache
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/task6.dll
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/refint/task6.dll
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/task6.pdb
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/task6.genruntimeconfig.cache
+/Users/denisuvarov/Documents/GeekBreans/C#/Home work/S1/task6/obj/Debug/net6.0/ref/task6.dll
