@@ -6,3 +6,16 @@
 
 // 32679 -> 6
 
+int RandomUserNumber = Random.Shared.Next(0, int.MaxValue);
+Console.WriteLine(RandomUserNumber);
+
+if (RandomUserNumber < 100) Console.WriteLine(RandomUserNumber + " не хватает третьей цифры");
+
+else
+{
+    while (RandomUserNumber > 999) 
+    { 
+        RandomUserNumber = RandomUserNumber / 10; 
+    }
+    Console.WriteLine(RandomUserNumber % 10);
+}
