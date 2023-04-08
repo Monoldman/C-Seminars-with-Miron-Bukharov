@@ -18,14 +18,12 @@
 
 
 
-
-
-
 // Решение с функцией:
 
 
 Console.WriteLine("Введите число ");
-
+int inputInt = GetIntInput();
+Console.WriteLine(MultNumb(inputInt));
 
 int GetIntInput()
 {
@@ -33,8 +31,6 @@ string input = Console.ReadLine();
 int result = int.Parse(input);
 return result;
 }
-
-int inputInt = GetIntInput();
 
 int MultNumb(int number)
 {
@@ -46,4 +42,6 @@ sum*=i;
 }
 return sum;
 }
-Console.WriteLine(MultNumb(inputInt));
+
+
+
