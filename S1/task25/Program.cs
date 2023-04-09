@@ -1,47 +1,36 @@
-﻿/* Задача №28:
-Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
-4 -> 24 
-5 -> 120
+﻿/* Задача 25: Напишите цикл, который принимает на вход 
+два числа (A и B) и возводит число A в натуральную степень B.
+3, 5 -> 243 (3⁵)
+2, 4 -> 16
 
  */
  
-// Console.WriteLine("Введите число");
-// int N = Convert.ToInt32(Console.ReadLine());
-// int multNumRes = 1;
-// for (int i = 1; i<=N; i++)
 
-// {
-//  multNumRes = multNumRes*i;
-// }
+int a = InputNumber("Введите число А");
+int b = InputNumber("Введите число B");    
+int result = resAxB(a, b);
+ Console.WriteLine(result);
 
-// Console.WriteLine(multNumRes);
-
-
-
-// Решение с функцией:
-
-
-Console.WriteLine("Введите число ");
-int inputInt = GetIntInput();
-Console.WriteLine(MultNumb(inputInt));
-
-int GetIntInput()
+int InputNumber(string message) 
 {
-string input = Console.ReadLine();
-int result = int.Parse(input);
-return result;
+    Console.WriteLine(message);
+    int value = int.Parse(Console.ReadLine());
+    return value; 
 }
 
-int MultNumb(int number)
+int resAxB(int a, int b)
 {
-int sum = 1;
-for(int i = 1; i<= number; i++)
-{
-sum*=i;
+int count = 1;
+
+for (int i = 0; i < b; i++)
+    {
+        count = count * a; //count *= a;  
+    }
+return count;
 
 }
-return sum;
-}
+
+
 
 
 
