@@ -23,6 +23,8 @@
 
 Console.WriteLine("Введите число ");
 int inputInt = GetIntInput();
+
+
 Console.WriteLine(MultNumb(inputInt));
 
 int GetIntInput()
