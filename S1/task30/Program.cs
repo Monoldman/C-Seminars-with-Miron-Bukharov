@@ -1,48 +1,53 @@
 ﻿// Задача 30: Напишите программу, которая выводит массив из 8 элементов,
 // заполненный нулями и единицами в случайном порядке.
 
+ 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-void FillArray(int[] collection)
+void FillInArray(int[] collection)   
 {
-    int length = collection.Length;
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < collection.Length; i++)
     {
         collection[i] = new Random().Next(0, 2);
     }
  
 }
  
-void PrintArray(int[] col)
+// Описание Функции, которая заполняет массив случайными числами от 0 до 1:
+// void           тип возвращаемого значения
+// FillInArray    название функции 
+// int[]          тип данных + массив
+// collection     название массива
+// for (int i = 0; i < collection.Length; i++)  цикл перебора массива 
+// collection[i] = new Random().Next(0, 2);    заполнение массива случайными числами от 0 до 1.
+
+
+
+void CreateArray(int[] numbersset)
 {
-    int count = col.Length;
-    int position = 0;
-    while (position < count - 1)
+    for (int i = 0; i < numbersset.Length; i++)
+
     {
-        Console.Write($"{col[position]}, ");
-        position++;
+        Console.Write($"{numbersset[i]}, ");
+     
     }
-    Console.Write($"{col[position]}");
 }
  
-Console.Clear();
+// Описание Функции, которая создает массив:
+// void           тип возвращаемого значения
+// CreateArray    название функции 
+// int[]          тип данных + массив
+// numbersset     название массива
+// for (int i = 0; i < numbersset.Length; i++) цикл перебора массива 
+// Console.Write($"{numbersset[i]}, "); вывод массива .
+
+
+Console.Clear(); //очищение консоли 
  
-int[] array = new int[100];
-FillArray(array);
-PrintArray(array);
-*/
+
+//  КОД:
+int[] array = new int[8];
+FillInArray(array);
+CreateArray(array);
