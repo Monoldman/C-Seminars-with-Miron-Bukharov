@@ -6,8 +6,6 @@
 3, 1, 33 -> [6, 1, 33]*/
 
 
-
-
 int length = 12;
 int leftRange = 1;
 int rightRange = 100;
