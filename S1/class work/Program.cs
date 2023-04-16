@@ -152,3 +152,87 @@ for (int i = 0; i < array.Length; i++)
 
 
 
+/*Задача 32: Напишите программу замена элементов массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
+[-4, -8, 8, 2] -> [4, 8, -8, -2] 
+
+
+int[] array = new int [4];   //задаем массив и его значения 
+array [0] = -4; 
+array [1] = -8; 
+array [2] = 8; 
+array [3] = 2;
+PrintArray(array); //выводим массив до изменений
+ChangePosIntoNeg(array); 
+PrintArray(array); //выводим массив после изменений
+
+ void ChangePosIntoNeg(int[] array)               //замена положительных на отрицательные
+  {
+for (int i = 0; i < array.Length; i++)
+    {
+    array[i] *= -1;        
+    }
+  }
+
+ void PrintArray(int[] array)                     //вывод массива 
+{
+    Console.Write("{");
+    for (int i = 0; i < array.Length -1; i++)
+    {
+    Console.Write ($"{array[i]},");
+    }
+    Console.WriteLine(array[^1] + "}");
+
+}
+*/
+
+
+
+/* Задача 33: Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
+4; массив [6, 7, 19, 345, 3] -> нет
+3; массив [6, 7, 19, 345, 3] -> да
+
+
+int[] array = {6, 7, 19, 345, 3};
+PrintArray(array);
+Console.WriteLine("Введите число, которое надо найти");
+int number = ReadNumberFromConsole();
+bool result = FindNumberInArray(array, number); // использование функции
+if (result == true)
+{
+    Console.WriteLine("Да");
+}
+else
+{
+    Console.WriteLine("Нет");
+}
+ 
+bool FindNumberInArray(int[] array, int numberToSearch) // ФУНКИЦЯ посиск числа 
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == numberToSearch)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+ 
+void PrintArray(int[] array) // ФУНКИЦЯ вывод массива 
+{
+    Console.Write("{");
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        Console.Write($"{array[i]},");
+    }
+    Console.WriteLine(array[^1] + "}");
+}
+ 
+int ReadNumberFromConsole() // ФУНКИЦЯ вывод числа 
+{
+    string input = Console.ReadLine();
+    return int.Parse(input);
+}
+*/
+
+
