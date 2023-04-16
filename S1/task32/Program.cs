@@ -7,9 +7,9 @@ array [0] = -4;
 array [1] = -8; 
 array [2] = 8; 
 array [3] = 2;
-PrintArray(array);
+PrintArray(array); //выводим массив до изменений
 ChangePosIntoNeg(array); 
-PrintArray(array);
+PrintArray(array); //выводим массив после изменений
 
  void ChangePosIntoNeg(int[] array)               //замена положительных на отрицательные
   {
