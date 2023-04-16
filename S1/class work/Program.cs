@@ -236,3 +236,6 @@ int ReadNumberFromConsole() // ФУНКИЦЯ вывод числа
 */
 
 
+
+
+
