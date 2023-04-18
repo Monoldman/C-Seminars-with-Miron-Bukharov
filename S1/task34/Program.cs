@@ -1,68 +1,72 @@
-﻿/* Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
-Напишите программу, которая покажет количество чётных чисел в массиве. */
-
-
-
-        Console.Clear();
-        int[] array = new int[5]; // задаем размер массива
-        
-        
-        
-        
-        FillArray(array, 1, 5); // задаем массив через функцию гененрации массива 
-        
-        
-        
-        PrintArray(array);
-        PrintArray(MultiplyPairs(array));
+﻿/*    Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+Напишите программу, которая покажет количество чётных чисел в массиве. 
+[345, 897, 568, 234] -> 2    */
 
 
 
 
-        void FillArray(int[] array, int min, int max)             //ФУНКЦИЯ генерации рандомного  массива 
+
+// ФУНКЦИЯ генерации случайного массива с вводдом чисел (через GetRandomArray) ВЫЗЫВАЮЩАЯ:
+int length = 10;
+int leftRange = 100;
+int rightRange = 1000;
+int[] myArray = GetRandomArray(length, leftRange, rightRange);
+Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМEНЕНИЙ
+AllpositiveNumbers(myArray); 
+int counts = AllpositiveNumbers(myArray);
+Console.WriteLine($"[{string.Join(", ", counts)}]");// выводим РЕЗУЛЬТАТ 
+
+
+int[] GetRandomArray(int length, int leftRange, int rightRange) //ФУНУЦИЯ генерации случайного массива ВЫЗЫВАЕМАЯ 
+{
+    int[] array = new int [length];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Random.Shared.Next(leftRange, rightRange);
+        
+    }
+  
+    return array;
+}
+
+int AllpositiveNumbers (int[] array) //ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ
+{
+    int result = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0)
         {
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = new Random().Next(min, max + 1);  // +1  тк  Random().Next не включает последнее значение
-            }
-
-        }
-        void PrintArray(int[] array) // ФУНКИЦЯ вывод массива 
-        {
-            Console.Write("{");
-            for (int i = 0; i < array.Length - 1; i++)
-            {
-                Console.Write($"{array[i]},");
-            }
-            Console.WriteLine(array[^1] + "}");
+            result += 1;
         }
        
-       
-       
-       
-       
-        int[] MultiplyPairs(int[] array)
-        {
-            int firstPointer = 0;
-            int secondPointer = array.Length - 1;
-            int pairPointer = 0;
-            int[] pairsMultiply = new int[(array.Length +1) / 2];
-            while (firstPointer < secondPointer)
-            {
-                pairsMultiply [pairPointer] = array[firstPointer] * array[secondPointer];
-                firstPointer++;
-                secondPointer--;
-                pairPointer++;
-            }
-            if (firstPointer == secondPointer)
-            {
-                pairsMultiply [pairPointer] = array[firstPointer]; // *1;
-            }
-             return pairsMultiply;
-        }
-
-
+    }               
+    return result;
+}
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
