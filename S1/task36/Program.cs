@@ -14,12 +14,12 @@ int[] myArray = GetRandomArray(length, leftRange, rightRange);
 Console.WriteLine($"[{string.Join(", ", myArray)}]");//выводим МАССИВ ДО ИЗМEНЕНИЙ
 
 AlloddNumbers(myArray);
-int counts = AlloddNumbers(myArray); //ДОПОЛНИТЕЛЬНАЯ ПЕРЕМЕННАЯ, которая запускает программу
-Console.WriteLine($"[{string.Join(", ", counts)}]");// выводим РЕЗУЛЬТАТ
+int sumOdds = AlloddNumbers(myArray); //ДОПОЛНИТЕЛЬНАЯ ПЕРЕМЕННАЯ, которая запускает программу
+Console.WriteLine($"[{string.Join(", ", sumOdds)}]");// выводим РЕЗУЛЬТАТ
 
 
 
-int[] GetRandomArray(int length, int leftRange, int rightRange) // Метод генерации случайного массива с вводдом чисел (ВЫЗЫВАЕМЫЙ):
+int[] GetRandomArray(int length, int leftRange, int rightRange) // Метод генерации случайного массива (ВЫЗЫВАЕМЫЙ):
 
 {
     int[] array = new int [length];
@@ -34,7 +34,7 @@ int[] GetRandomArray(int length, int leftRange, int rightRange) // Метод г
 }
 
 
-int AlloddNumbers (int[] array) // ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ
+int AlloddNumbers (int[] array) // ФУНУЦИЯ ОБРАБАТЫВАЮШАЯ МАССИВ (сумма нечетных элементов)
 {
     int result = 0;
 
