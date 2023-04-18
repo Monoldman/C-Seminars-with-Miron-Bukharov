@@ -10,8 +10,6 @@
         PrintArray(array);
         PrintArray(MultiplyPairs(array));
 
-
-
         void FillArray(int[] array, int min, int max)             //ФУНКЦИЯ генерации рандомного  массива 
         {
             for (int i = 0; i < array.Length; i++)
@@ -20,7 +18,6 @@
             }
 
         }
-
         void PrintArray(int[] array) // ФУНКИЦЯ вывод массива 
         {
             Console.Write("{");
@@ -30,7 +27,6 @@
             }
             Console.WriteLine(array[^1] + "}");
         }
-
         int[] MultiplyPairs(int[] array)
         {
             int firstPointer = 0;
