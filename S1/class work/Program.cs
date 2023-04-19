@@ -4,6 +4,16 @@
 3) ВЫВОДИМ В КОНСОЛЬ ИЗНАЧАЛЬНЫЙ МАССИВ 
 4) ВЫВОДИМ В КОНСОЛЬ ИЗМЕНЕННЫЙ  МАССИВ 
 2) ПИШЕМ ФУНКЦИЮ, КОТОРАЯ ОБРАБАТЫВЕТ МАССИВ И ВЫДАЕТ НОВЫЕ ЗНАЧЕНИЯ   
+*/
+
+// ФУНКЦИЯ генерации случайных вещественных чисел:
+
+// for (int i = 0; i < 10; i++)
+//     {
+//         double rendomNumber = new Random().NextDouble();
+//         Console.WriteLine(rendomNumber);
+//     }
+  
 
 
 
@@ -12,11 +22,7 @@
 
 
 
-
-
-
-
-
+/*
 // Задача 32: Напишите программу замена элементов массива: положительные элементы замените на соответствующие отрицательные, и наоборот. [-4, -8, 8, 2] -> [4, 8, -8, -2] 
 
 int[] array = new int [4];   //задаем массив и его значения 
@@ -562,4 +568,43 @@ int[] GetRandomArray(int length, int leftRange, int rightRange) //ФУНКЦИЯ
 }
  
 */
+
+/*
+// Напришите программу, которая перевернет одномерный массив (последний элемент 
+//бдует на первом месте, а первый - на последнем и тд.).
+//[123455] -> [54321]
+//[6736] -> [6376]
+
+
+int[] array = new int[] {1,2,3,4,5,6,7,8,9,0 };
+
+PrintArray(array);
+ReverseArray(array);
+PrintArray(array);
+
+
+void ReverseArray (int[] array)  //ФУНКЦИЯ принимает и преобразовывает массив
+
+{
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        int buf = array [array.Length -i -1];
+        array [array.Length -i -1] = array [i];
+        array[i] = buf;
+    }  
+}
+
+ void PrintArray(int[] array) // ФУНКИЦЯ вывод массива 
+        {
+            Console.Write("{");
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                Console.Write($"{array[i]},");
+            }
+            Console.WriteLine(array[^1] + "}");
+        }
+
+*/
+
+
 
