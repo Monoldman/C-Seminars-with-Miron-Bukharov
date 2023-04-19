@@ -659,3 +659,5 @@ bool IsTriangleExist(int a, int b, int c) //Функиця ло гическая
 */
 
 
+
+
