@@ -6,38 +6,9 @@
 
 Console.Clear();
 
-int a = ReadNumberFromConsole("Введите длину стороны А");
-int b = ReadNumberFromConsole("Введите длину стороны B");
-int c = ReadNumberFromConsole("Введите дли ну стороны C");
-Console.WriteLine($"A={a}, B={b}, C={c}");
+int decimalNumber = ReadNumberFromConsole("Введите десятичное число");
+Console.WriteLine(DecToInt(decimalNumber));    
 
-bool isTriangleExist = IsTriangleExist(a,b,c);
-if(isTriangleExist)
-    Console.WriteLine("Треульник существует");
-else
-    Console.WriteLine("Треульник не существует");    
-    
- 
-void ReverseArray (int[] array)  //ФУНКЦИЯ принимает и преобразовывает массив
-
-{
-    for (int i = 0; i < array.Length / 2; i++)
-    {
-        int buf = array [array.Length -i -1];
-        array [array.Length -i -1] = array [i];
-        array[i] = buf;
-    }  
-}
-
- void PrintArray(int[] array) // ФУНКИЦЯ вывод массива 
-        {
-            Console.Write("{");
-            for (int i = 0; i < array.Length - 1; i++)
-            {
-                Console.Write($"{array[i]},");
-            }
-            Console.WriteLine(array[^1] + "}");
-        }
 
  int ReadNumberFromConsole(string message = "") //string message = "" -  говорит о необязательном характере записи 
 {
@@ -47,10 +18,20 @@ void ReverseArray (int[] array)  //ФУНКЦИЯ принимает и прео
     return int.Parse(input); 
 }
 
-bool IsTriangleExist(int a, int b, int c) //Функиця ло гическая возваращающая да или нет, проверяет теорема о неравенстве треугольника
+
+string DecToInt(int decimalNumber) //ФУНКЦИЯ , коиторое возвращает двоичное число
+{   
+    string result = string.Empty; // то же самое что и "" 
+    while(decimalNumber > 0)
+    {
+        int someValue =  decimalNumber % 2;
+        result = someValue.ToString() + result;
+        decimalNumber /= 2;
+    }
+    return result;
+}   
 
 
 
 
-
-
+ 
