@@ -655,8 +655,8 @@ void ReverseArray (int[] array)  //ФУНКЦИЯ принимает и прео
     return int.Parse(input); 
 }
 
-bool IsTriangleExist(int a, int b, int c) //Функиця ло гическая возваращающая да или нет, проверяет теорема о неравенстве треугольника
-*/
+bool IsTriangleExist(int a, int b, int c) //Функиця логическая возваращающая да или нет, проверяет теорема о неравенстве треугольника
+
 
 
 /*
@@ -681,7 +681,7 @@ Console.WriteLine(DecToInt(decimalNumber));
 }
 
 
-string DecToInt(int decimalNumber) //ФУНКЦИЯ , коиторое возвращает двоичное число
+string DecToInt(int decimalNumber) //ФУНКЦИЯ , которая возвращает двоичное число
 {   
     string result = string.Empty; // то же самое что и "" 
     while(decimalNumber > 0)
@@ -712,7 +712,7 @@ int[] fibArray = GetFibNumbers(n);
 PrintArray(fibArray);
 
 
-int[] GetFibNumbers (int n) // ФУНКИЦЯ преобразования массива
+int[] GetFibNumbers (int n) // ФУНКИЦЯ преобразования массива в чисала Фибаначи
 {
     int[] result = new int[n];
     if (n >= 2)
@@ -743,8 +743,111 @@ int[] GetFibNumbers (int n) // ФУНКИЦЯ преобразования ма�
     return int.Parse(input); 
 }
 
-
+*/
  
+
+
+
+// Использованные функции:
+
+
+
+int[] GetRandomArray(int length, int leftRange, int rightRange) //ФУНКЦИЯ генерации случайного массива
+{
+    int[] array = new int [length];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Random.Shared.Next(leftRange, rightRange);
+        
+    }
+  
+    return array;
+}
+
+ int ReadNumberFromConsole(string message = "") //ФУНКИЦЯ считывает число с консоли 
+{
+    if (message!= "")
+        Console.WriteLine(message );
+    string input = Console.ReadLine();
+    return int.Parse(input); 
+}
+
+ void PrintArray(int[] array) // ФУНКИЦЯ вывод массива 
+        {
+            Console.Write("{");
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                Console.Write($"{array[i]},");
+            }
+            Console.WriteLine(array[^1] + "}");
+        }
+
+int[] GetFibNumbers (int n) // ФУНКИЦЯ преобразования массива в чисала Фибаначи
+
+{
+    int[] result = new int[n];
+    if (n >= 2)
+     result[1] = 1;
+    
+    for (int i = 2; i < result.Length; i++)
+    {
+        result[i] = result[i - 1] + result[i - 2];   
+    }
+    return result;   
+} 
+
+string DecToInt(int decimalNumber) //ФУНКЦИЯ , которая возвращает двоичное число
+{   
+    string result = string.Empty; // то же самое что и "" 
+    while(decimalNumber > 0)
+    {
+        int someValue =  decimalNumber % 2;
+        result = someValue.ToString() + result;
+        decimalNumber /= 2;
+    }
+    return result;
+}   
+
+void ReverseArray (int[] array)  //ФУНКЦИЯ переворачивает массив
+
+{
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        int buf = array [array.Length -i -1];
+        array [array.Length -i -1] = array [i];
+        array[i] = buf;
+    }  
+}
+
+(int, int) MaxMin (int[] array)  // ФУНУЦИЯ находит разницу между мин и макс
+{
+    int resultMin = 0;
+    int resultMax = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    
+    {
+        if (array[i] > resultMax)
+        {
+            resultMax = array[i];
+        }
+        else if  (array[i] <= resultMin)
+        {
+        resultMin = array[i];
+        }
+
+    }   
+
+    return (resultMin, resultMax);
+}
+
+
+
+
+
+
+
 
 
 
