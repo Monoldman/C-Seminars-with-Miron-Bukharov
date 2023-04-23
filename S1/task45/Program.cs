@@ -1,27 +1,39 @@
-﻿// Напишите программу, которая будет создавать копию данного массива с помощью поэлементного копирования 
+﻿// Задача 45
+// Напишите программу, которая будет создавать копию данного 
+// массива с помощью поэлементного копирования 
 
 Console.Clear();
+int[] array = new int[]{1,2,3,4,5,6,7,8 ,0}; //1) создаем массив
+PrintArray(array); //изначальный массив
+int[] newArray = CorrectCopyIncrementArray(array);
+PrintArray(newArray);//новый массив
+PrintArray(array);//изначальный массив
 
-int n = ReadNumberFromConsole("Введите количество чисел Фибаначи");
-
-int[] fibArray = GetFibNumbers(n);
-PrintArray(fibArray);
 
 
-int[] GetFibNumbers (int n) // ФУНКИЦЯ преобразования массива
+int[] WrongCopyIncrementArray(int[] array)  //4) создаем ФУНКЦИЮ в которой каждый элемент будет увеличен на единицу 
 {
-    int[] result = new int[n];
-    if (n >= 2)
-     result[1] = 1;
-    
-    for (int i = 2; i < result.Length; i++)
+     for (int i = 0; i < array.Length; i++)
     {
-        result[i] = result[i - 1] + result[i - 2];   
+    array [i] = array[i] +1;  
     }
-    return result;   
+    return newArray; 
 } 
+ 
 
- void PrintArray(int[] array) // ФУНКИЦЯ вывод массива 
+
+int[] CorrectCopyIncrementArray(int[] array)  //2) создаем ФУНКЦИЮ в которой каждый элемент будет увеличен на единицу 
+{
+    int[] newArray = new int [array.Length]; //3) создаем копию массива той же длины  
+    for (int i = 0; i < array.Length; i++)
+    {
+    newArray[i] = array[i] +1;  
+    }
+    return newArray; 
+} 
+ 
+
+void PrintArray(int[] array) // ФУНКИЦЯ вывод массива 
         {
             Console.Write("{");
             for (int i = 0; i < array.Length - 1; i++)
@@ -30,13 +42,5 @@ int[] GetFibNumbers (int n) // ФУНКИЦЯ преобразования ма�
             }
             Console.WriteLine(array[^1] + "}");
         }
-
- int ReadNumberFromConsole(string message = "") //string message = "" -  говорит о необязательном характере записи 
-{
-    if (message!= "")
-        Console.WriteLine(message );
-    string input = Console.ReadLine();
-    return int.Parse(input); 
-}
 
 

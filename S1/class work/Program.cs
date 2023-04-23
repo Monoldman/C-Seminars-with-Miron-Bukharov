@@ -746,11 +746,85 @@ int[] GetFibNumbers (int n) // ФУНКИЦЯ преобразования ма�
 */
  
 
+/*
+// Задача 45
+// Напишите программу, которая будет создавать копию данного 
+// массива с помощью поэлементного копирования 
+
+Console.Clear();
+int[] array = new int[]{1,2,3,4,5,6,7,8 ,0}; //1) создаем массив
+PrintArray(array); //изначальный массив
+int[] newArray = CorrectCopyIncrementArray(array);
+PrintArray(newArray);//новый массив
+PrintArray(array);//изначальный массив
 
 
-// Использованные функции:
+int[] WrongCopyIncrementArray(int[] array)  //4) создаем ФУНКЦИЮ в которой каждый элемент будет увеличен на единицу 
+{
+     for (int i = 0; i < array.Length; i++)
+    {
+    array [i] = array[i] +1;  
+    }
+    return newArray; 
+} 
+ 
+int[] CorrectCopyIncrementArray(int[] array)  //2) создаем ФУНКЦИЮ в которой каждый элемент будет увеличен на единицу 
+{
+    int[] newArray = new int [array.Length]; //3) создаем копию массива той же длины  
+    for (int i = 0; i < array.Length; i++)
+    {
+    newArray[i] = array[i] +1;  
+    }
+    return newArray; 
+} 
+ 
+void PrintArray(int[] array) // ФУНКИЦЯ вывод массива 
+        {
+            Console.Write("{");
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                Console.Write($"{array[i]},");
+            }
+            Console.WriteLine(array[^1] + "}");
+        }
+
+*/
 
 
+
+
+
+
+
+
+
+
+
+
+
+// Использованные  ФУНКЦИИ:
+
+
+int[] GetFibNumbers (int n) // ФУНКИЦЯ преобразования массива (Фибаначи)
+{
+    int[] result = new int[n];
+    if (n >= 2)
+     result[1] = 1;
+    
+    for (int i = 2; i < result.Length; i++)
+    {
+        result[i] = result[i - 1] + result[i - 2];   
+    }
+    return result;   
+} 
+
+ int ReadNumberFromConsole(string message = "") //string message = "" -  говорит о необязательном характере записи 
+{
+    if (message!= "")
+        Console.WriteLine(message );
+    string input = Console.ReadLine();
+    return int.Parse(input); 
+}
 
 int[] GetRandomArray(int length, int leftRange, int rightRange) //ФУНКЦИЯ генерации случайного массива
 {
@@ -809,7 +883,7 @@ string DecToInt(int decimalNumber) //ФУНКЦИЯ , которая возвр�
     return result;
 }   
 
-void ReverseArray (int[] array)  //ФУНКЦИЯ переворачивает массив
+void ReverseArray (int[] array)  //ФУНКЦИЯ переворачивает массив 
 
 {
     for (int i = 0; i < array.Length / 2; i++)
@@ -842,8 +916,16 @@ void ReverseArray (int[] array)  //ФУНКЦИЯ переворачивает �
     return (resultMin, resultMax);
 }
 
-
-
+int[] IncrementArray(int[] array)  //2) создаем ФУНКЦИЮ в которой каждый элемент будет увеличен на единицу 
+{
+    int[] newArray = new int [array.Length]; //3) создаем копию массива той же длины  
+    for (int i = 0; i < array.Length; i++)
+    {
+    newArray[i] = array[i] +1;  
+    }
+    return newArray; 
+} 
+ 
 
 
 
