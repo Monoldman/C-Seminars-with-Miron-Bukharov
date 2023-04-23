@@ -17,7 +17,8 @@ int CheckNumbersGreaterThanZero(int num)
     {
         Console.Write($"Введите число {i}: ");
         int number = int.Parse(Console.ReadLine()!);
-        if (number > 0) count++;
+        if (number > 0) 
+        count++;
     }
     return count;
 }
