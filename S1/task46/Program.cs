@@ -5,30 +5,6 @@
 //  5  -2  33  -2
 // 77   3  8   1
 
-int[,] MassNums(int row, int column, int from, int to)
-{
-int[,] arr = new int[row, column];
-
-for (int i = 0; i < row; i++)
-for (int j = 0; j < column; j++)
-arr[i, j] = new Random().Next(from, to + 1);
-return arr;
-}
-
-void Print(int[,] arr)
-{
-int row = arr.GetLength(0);
-int column = arr.GetLength(1);
-
-for (int i = 0; i < row; i++)
-{
-for (int j = 0; j < column; j++)
-Console.Write($" {arr[i, j], 4} ");
-Console.WriteLine();
-}
-Console.WriteLine();
-}
-
 Console.Write("Enter the number of rows: ");
 int row_num = int.Parse(Console.ReadLine()!);
 Console.Write("Enter the number of columns: ");
@@ -41,3 +17,30 @@ int stop = int.Parse(Console.ReadLine()!);
 
 int[,] mass = MassNums(row_num, column_num, start, stop);
 Print(mass);
+
+
+int[,] MassNums(int row, int column, int from, int to) // ФУНКЦИЯ созд рандомного массива строки/слолбцы/лев граница/прав граница 
+{
+int[,] array = new int[row, column]; // двумерный массив 
+
+for (int i = 0; i < row; i++) // счеткик, который бегает по строкам
+for (int j = 0; j < column; j++) // счеткик, который бегает по столбцам
+array[i, j] = new Random().Next(from, to + 1); //array[i, j] - указывает на каком элементе массива находится счетчик 
+return array;                                 //new Random().Next(from, to + 1) - указывает, чем заполнять: рандом от 'from' до 'to' + 1
+}                                             //new Random().Next не включается последний элемент, поэтому +1 к 'to'
+
+
+void Print(int[,] array) // ФУНКЦИЯ красиво выводит преобразованный двумерный массив  
+{
+int row = array.GetLength(0);// возвращает кортеж 
+int column = array.GetLength(1);
+
+for (int i = 0; i < row; i++)
+{
+for (int j = 0; j < column; j++)
+Console.Write($" {array[i, j], 4} "); // не дает слипнуться  
+Console.WriteLine(); // для перевода курсора на следующую строку
+}
+Console.WriteLine();// не дает слипнуться  
+}
+
