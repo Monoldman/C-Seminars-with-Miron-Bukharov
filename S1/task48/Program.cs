@@ -21,7 +21,7 @@ int[,] array = new int[row, column]; // двумерный массив
 
 for (int i = 0; i < row; i++) // счеткик, который бегает по строкам
 for (int j = 0; j < column; j++) // счеткик, который бегает по столбцам
-array[i, j] = i+j; //array[i, j] - указывает на каком элементе массива находится счетчик 
+array[i, j] = i+j; //array[i, j]  
 return array;                                 
 }                                             
 
