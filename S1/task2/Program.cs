@@ -13,6 +13,11 @@
 // else {Console.WriteLine("max = " + userNumber2 + " min = " + userNumber1);}
 
 
+
+
+// AТТЕСТАТ 
+
+
 /*
 // Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа 
 // в промежутке от N до 1. Выполнить с помощью рекурсии.
@@ -42,7 +47,33 @@ if (n < 1)
   return;
 }
 Console.WriteLine(NaturalNumber(n, 1));
+
+
+
+РЕШЕНИЕ 2:
+ 
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int count = 1;
+NaturalToLow(number, count);
+
+
+void NaturalToLow(int n, int count)
+{
+    if (count > n)
+    {
+        return;
+    }
+    else
+    {
+        NaturalToLow(n, count + 1);
+        Console.Write(count + " ");
+    }
+}
+
 */
+
+
 
 
 /*
@@ -74,6 +105,36 @@ Console.WriteLine(SumOfElements(m, n));
 
 */
 
+// РЕШЕНИЕ 2:
+ 
+Console.Write("Введите число M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+SumFromMToN(m, n);
+
+// вызов функции "сумма чисел от M до N"
+void SumFromMToN(int m, int n)
+{
+    Console.Write(SumMN(m - 1, n));
+}
+
+// функция сумма чисел от M до N
+int SumMN(int m, int n)
+{
+    int res = m;
+    if (m == n)
+        return 0;
+    else
+    {
+        m++;
+        res = m + SumMN(m, n);
+        return res;
+    }
+}
+
 
 
 /*
@@ -104,173 +165,44 @@ Console.WriteLine($"A({m},{n}) = {Akkerman(m, n)}");
 
 */
 
+ 
+Console.Write("Введите число M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+AkkermanFunction(m,n);
 
 
-/*
-// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
-// m = 3, n = 4.
-// 0,5 7 -2 -0,2
-// 1 -3,3 8 -9,9
-// 8 7,8 -7,1 9
-
-Console.Clear();
-void PrintArray(double[,] matr)
+// вызов функции Аккермана
+void AkkermanFunction(int m, int n)
 {
-  for (int i = 0; i < matr.GetLength(0); i++)
-  {
-    for (int j = 0; j < matr.GetLength(1); j++)
+    Console.Write(Akkerman(m, n)); 
+}
+
+// функция Аккермана
+int Akkerman(int m, int n)
+{
+    if (m == 0)
     {
-      Console.Write($"{matr[i, j]} ");
+        return n + 1;
     }
-    Console.WriteLine();
-  }
-}
-
-void FillArray(double[,] matr)
-{
-  for (int i = 0; i < matr.GetLength(0); i++)
-  {
-    for (int j = 0; j < matr.GetLength(1); j++)
+    else if (n == 0 && m > 0)
     {
-      matr[i, j] = Math.Round((new Random().NextDouble()) * 5, 1);
+        return Akkerman(m - 1, 1);
     }
-  }
-}
-
-double[,] matrix = new double[3, 4];
-FillArray(matrix);
-PrintArray(matrix);
-
-*/
-
-/* неправильная скорее весего
-// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
-// и возвращает значение этого элемента или же указание, что такого элемента нет.
-// Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// 17 -> такого числа в массиве нет
-
-Console.Clear();
-
-int Prompt(string message)
-{
-  Console.Write(message);
-  var readInput = Console.ReadLine();
-  int result = Convert.ToInt32(readInput);
-  return result;
-}
-
-int[,] CreatArray(int m = 3, int n = 4)
-{
-  int[,] matrix = new int[m, n];
-  return matrix;
-}
-
-void PrintArray(int[,] matr)
-{
-  for (int i = 0; i < matr.GetLength(0); i++)
-  {
-    for (int j = 0; j < matr.GetLength(1); j++)
+    else
     {
-      Console.Write($"{matr[i, j]} ");
+        return (Akkerman(m - 1, Akkerman(m, n - 1)));
     }
-    Console.WriteLine();
-  }
 }
 
-int[,] FillArrayRandom(int[,] arr)
-{
-  for (int i = 0; i < arr.GetLength(0); i++)
-  {
-    for (int j = 0; j < arr.GetLength(1); j++)
-    {
-      arr[i, j] = new Random().Next(1, 20);
-    }
-  }
-  return arr;
-}
-
-string FindNumber(int[,] matr)
-{
-  int findNum = Prompt("Введите число для поиска: ");
-  string result = string.Empty;
-
-  for (int i = 0; i < matr.GetLength(0); i++)
-  {
-    for (int j = 0; j < matr.GetLength(1); j++)
-    {
-      if (matr[i, j] == findNum)
-      {
-        result = result + $" {findNum} на позиции [{i}, {j}]";
-      }
-    }
-  }
-  return result == "" ? $"{findNum} нет в матрице" : result;
-}
-
-int[,] matr = CreatArray();
-matr = FillArrayRandom(matr);
-PrintArray(matr);
-Console.WriteLine(FindNumber(matr));
-
-*/
 
 
 
 
-// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-// Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-Console.Clear();
 
-void PrintArray(int[,] matr)
-{
-  for (int i = 0; i < matr.GetLength(0); i++)
-  {
-    for (int j = 0; j < matr.GetLength(1); j++)
-    {
-      Console.Write($"{matr[i, j],3} ");
-    }
-    Console.WriteLine();
-  }
-}
-
-void FillArray(int[,] matr)
-{
-  for (int i = 0; i < matr.GetLength(0); i++)
-  {
-    for (int j = 0; j < matr.GetLength(1); j++)
-    {
-      matr[i, j] = new Random().Next(1, 10);
-    }
-  }
-}
-
-double[] FindAverage(int[,] matr)
-{
-  double[] averageMatr = new double[matr.GetLength(1)];
-
-  for (int j = 0; j < matr.GetLength(1); j++)
-  {
-    double averageNum = 0;
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
-      averageNum += (matr[i, j]);
-    }
-    averageMatr[j] = Math.Round(averageNum / matr.GetLength(0), 2);
-  }
-  return averageMatr;
-}
-
-int[,] matrix = new int[3, 4];
-FillArray(matrix);
-PrintArray(matrix);
-Console.WriteLine(string.Join("  ", FindAverage(matrix)));
 
 
