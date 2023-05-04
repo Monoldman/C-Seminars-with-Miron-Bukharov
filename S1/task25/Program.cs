@@ -6,29 +6,29 @@
  */
  
 
-int a = InputNumber("Введите число А");
-int b = InputNumber("Введите число B");    
-int result = resAxB(a, b);
- Console.WriteLine(result);
+// int a = InputNumber("Введите число А");
+// int b = InputNumber("Введите число B");    
+// int result = resAxB(a, b);
+//  Console.WriteLine(result);
 
-int InputNumber(string message) 
-{
-    Console.WriteLine(message);
-    int value = int.Parse(Console.ReadLine());
-    return value; 
-}
+// int InputNumber(string message) 
+// {
+//     Console.WriteLine(message);
+//     int value = int.Parse(Console.ReadLine());
+//     return value; 
+// }
 
-int resAxB(int a, int b)
-{
-int count = 1;
+// int resAxB(int a, int b)
+// {
+// int count = 1;
 
-for (int i = 0; i < b; i++)
-    {
-        count = count * a; //count *= a;  
-    }
-return count;
+// for (int i = 0; i < b; i++)
+//     {
+//         count = count * a; //count *= a;  
+//     }
+// return count;
 
-}
+// }
 
 
 
