@@ -1074,6 +1074,38 @@ Console.WriteLine();// не дает слипнуться
 
 /*
 
+// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
+
+Console.Clear(); //очищает консоль
+
+double[,] array2D = new double[3, 4];
+GetRandomDoubleArray(array2D);
+PrintArray(array2D);
+
+void PrintArray(double[,] array) // ФУНКЦИЯ красиво выводит преобразованный двумерный массив с вещественными числами  
+{
+int row = array.GetLength(0);// возвращает кортеж 
+int column = array.GetLength(1);
+
+for (int i = 0; i < row; i++)
+{
+for (int j = 0; j < column; j++)
+Console.Write($" {array[i, j], 4} "); // не дает слипнуться  
+Console.WriteLine(); // для перевода курсора на следующую строку
+}
+Console.WriteLine();// не дает слипнуться  
+}
+
+void GetRandomDoubleArray(double[,] array) //ФУНКЦИЯ созд рандомного массива c вещественными числами
+*/
+
+
+
+/*
 // Задача 48: Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aₘₙ = m+n. Выведите полученный массив на экран.
 // m = 3, n = 4.
 // 0 1 2 3
@@ -1444,17 +1476,6 @@ void PrintArray(int[,] matr) // ФУНКЦИЯ генерации двумерн
  }
 }
 
-void FillArray(int[,] matr) // ФУНКЦИЯ генерации РАНДОМНОГО двумерного массива 
-{
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
-         for (int j = 0; j < matr.GetLength(1); j++) 
-         {
-            matr[i, j] = new Random().Next(1,10); // полуинтервал от [1 до 10)
-         }
-    } 
-}
-
 void NewArr(int[,] array) // ФУНКЦИЯ находит два неччетных индекса и меняет их на их квадраты  
 {
 int row = array.GetLength(0);
@@ -1511,7 +1532,30 @@ Console.WriteLine(); // для перевода курсора на следую
 Console.WriteLine();// не дает слипнуться  
 }
 
+void Print(int[,] array) // ФУНКЦИЯ красиво выводит преобразованный двумерный массив  
+{
+int row = array.GetLength(0);// возвращает кортеж 
+int column = array.GetLength(1);
+
+for (int i = 0; i < row; i++)
+{
+for (int j = 0; j < column; j++)
+Console.Write($" {array[i, j], 4} "); // не дает слипнуться  
+Console.WriteLine(); // для перевода курсора на следующую строку
+}
+Console.WriteLine();// не дает слипнуться  
+}
+
+void GetRandomArray2D(int[,] array) // ФУНКЦИЯ генерации РАНДОМНОГО двумерного массива 
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+         for (int j = 0; j < array.GetLength(1); j++) 
+         {
+            array[i, j] = new Random().Next(1,10); // полуинтервал от [1 до 10)
+         }
+    } 
+}
+
+
 */
-
-
-
