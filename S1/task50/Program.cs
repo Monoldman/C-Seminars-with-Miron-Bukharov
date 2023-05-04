@@ -6,6 +6,7 @@
 // 1 4 7 2
 // 5 9 2 3
 // 8 4 2 4
+
 // 17 -> такого числа в массиве нет
 
  
@@ -17,7 +18,7 @@ int[,] array2D = new int[4, 3];
 GetRandomArray2D(array2D);
 PrintArray2D(array2D);
 
-if (rowIndex < array2D.GetLength(0) && columnIndex < array2D.GetLength(1)) Console.WriteLine(array2D[rowIndex, columnIndex]);
+if (rowIndex < array2D.GetLength(0) && columnIndex < array2D.GetLength(1)) Console.WriteLine($"    {array2D[rowIndex, columnIndex]}");
 // если индекс ряда меньше длины ряда и индекс колонки меньше длинны колонки -> вывести число массива под этими индексами
 else Console.WriteLine($"{rowIndex}{columnIndex} -> такого числа в массиве нет");
 
