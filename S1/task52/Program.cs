@@ -14,7 +14,7 @@ Console.Clear(); //очищает консоль
 int[,] array = new int[4, 4];
 GetRandomArray(array); 
 PrintArray(array);
-Console.WriteLine(string.Join("  ", FindAverage(array)));
+Console.WriteLine($"  {string.Join("    ", FindAverage(array))}");
 
 
 void PrintArray(int[,] array) // ФУНКЦИЯ выводит преобразованный двумерный массив  
@@ -25,7 +25,7 @@ int column = array.GetLength(1);
 for (int i = 0; i < row; i++)
 {
 for (int j = 0; j < column; j++)
-Console.Write($" {array[i, j], 2} "); // не дает слипнуться  
+Console.Write($" {array[i, j], 4} "); // не дает слипнуться  
 Console.WriteLine(); // для перевода курсора на следующую строку
 }
 Console.WriteLine();// не дает слипнуться  
