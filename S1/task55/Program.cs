@@ -1,7 +1,7 @@
-﻿// Задача 53: Задайте двумерный массив. Напишите программу,
-// которая поменяет местами первую и последнюю строку
-// массива.
-
+﻿// Задача 55: Задайте двумерный массив. Напишите программу,
+// которая заменяет строки на столбцы. В случае, если это
+// невозможно, программа должна вывести сообщение для
+// пользователя.
 
 
 
@@ -10,7 +10,7 @@ Console.Clear(); //очищает консоль
 int[,] array = new int[4, 4];
 GetRandomArray(array); 
 PrintArray(array);
-ReplaceFirstLastRows(array); 
+ReplaceRowsToColumns(array); 
 PrintArray(array);
 // Console.WriteLine(string.Join("  ", FindAverage(array)));
 
@@ -40,12 +40,17 @@ void GetRandomArray(int[,] array) // ФУНКЦИЯ cсоздает рандом
   }
 }
 
-void ReplaceFirstLastRows(int[,] array) //Метод меняет первую строку массива и последнюю
+void ReplaceRowsToColumns(int[,] array) //Метод меняет строки на колонки 
 {
-    for (int i = 0; i < array.GetLength(1); i++)
-    {
-        int temp = array[0, i];
-        array[0, i] = array[array.GetLength(0) - 1, i]; // array[array.GetLength(0) - 1, i] - указывает на конкретный элемент массива
-        array[array.GetLength(0) - 1, i] = temp;        // array[array.GetLength(0)-1  количество элементов в массива -1, чтобы указать индекс
-    }
+    int length = array.GetLength(0);
+
+        for (int i = 0; i < length - 1; i++)
+        {
+            for (int j = i + 1; j < length; j++)
+            {
+                int temp = array[i, j];
+                array[i, j] = array[j, i];
+                array[j, i] = temp;
+            }
+        }
 }
