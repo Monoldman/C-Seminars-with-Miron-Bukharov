@@ -1570,11 +1570,11 @@ void GetRandomArray(int[,] array) // ФУНКЦИЯ cсоздает рандом
 
 void ReplaceRowsToColumns(int[,] array) //Метод меняет строки на колонки 
 {
-    int length = array.GetLength(0);
+    int length = array.GetLength(0); //длина для строк и столбцов будет одинаковая 
 
-        for (int i = 0; i < length - 1; i++)
+        for (int i = 0; i < length; i++) //length - 1 вводится чтобы не было двойной замены
         {
-            for (int j = i + 1; j < length; j++)
+            for (int j = 0; j < i; j++) //i + 1 вводится, чтобы не было двойной замены
             {
                 int temp = array[i, j];
                 array[i, j] = array[j, i];
