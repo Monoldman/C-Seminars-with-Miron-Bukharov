@@ -30,22 +30,22 @@ Console.WriteLine();
 PrintMatrix(resultMatrix);
 
 
-int[,] RemoveMinRowColumn(int[,] matrix, int minRow, int minColumn)
-{
-    int[,] newMatrix = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
-    int m = 0, n = 0;
-    for (int i = 0; i < newMatrix.GetLength(0); i++)
+int[,] RemoveMinRowColumn(int[,] matrix, int minInRow, int minInColumn) // ФУНКЦИЯ удаления строки и колонки из массива на пересечении мин чисел
+{                                                                   // int minRow, int minColumn предаем мин занчение в массиве  
+    int[,] newMatrix = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1]; // Создаем массив меньше на строчку и колонку
+    int m = 0, n = 0; //счетчики для массива  
+    for (int i = 0; i < newMatrix.GetLength(0); i++) //двигаемся по новому массиву
     {
-        if (m == minRow) m++;
-        for (int j = 0; j < newMatrix.GetLength(1); j++)
+        if (m == minInRow) m++; // счетчик минимального ряда 
+        for (int j = 0; j < newMatrix.GetLength(1); j++) ////двигаемся по новому массиву 
         {
-            if (n == minColumn) n++;
-            newMatrix[i, j] = matrix[m, n];
-            n++;
+            if (n == minInColumn) n++;
+            newMatrix[i, j] = matrix[m, n];//создаем счетчики с минимальными индексами  
+            n++; //счетчик по столбцам
         }
-        m++;
-        n = 0;
-    }
+        m++; //счетчик по строкам  
+        n = 0; //обнуляет столбцы, чтобы двигаться по строкам   
+    } 
     return newMatrix;
 }
 
