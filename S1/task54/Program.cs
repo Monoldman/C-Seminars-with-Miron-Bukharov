@@ -44,7 +44,7 @@ Console.WriteLine(); // для перевода курсора на следую
 Console.WriteLine();// не дает слипнуться  
 }
 
-void SortToLower(int[,] array) // ФУНКЦИЯ сортировки элементов к меньшему
+void SortToLower(int[,] array) // ФУНКЦИЯ сортировки элементов Matrix к меньшему
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {

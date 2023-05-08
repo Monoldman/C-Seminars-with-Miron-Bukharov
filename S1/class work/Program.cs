@@ -1525,6 +1525,80 @@ void ReplaceFirstLastRows(int[,] array) //Метод меняет первую �
 
 
 
+
+// Задача 54: Задайте двумерный массив. Напишите программу, 
+// которая упорядочит по убыванию элементы каждой строки двумерного массива.
+//  Например, задан массив:
+//  1 4 7 2
+//  5 9 2 3
+//  8 4 2 4
+//  В итоге получается вот такой массив:
+//  7 4 2 1
+//  9 5 3 2
+//  8 4 4 2
+
+
+
+
+
+/*
+int[,] matrix = new int[3, 4];
+GetRandomArray (matrix);
+PrintArray(matrix);
+SortToLower(matrix);
+PrintArray(matrix);
+
+
+void GetRandomArray(int[,] array) // ФУНКЦИЯ cсоздает рандомный двумерный массив
+{
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+      array[i, j] = new Random().Next(1, 9);
+    }
+  }
+}
+
+void PrintArray(int[,] array) // ФУНКЦИЯ выводит преобразованный двумерный массив  
+{
+int row = array.GetLength(0);// возвращает кортеж 
+int column = array.GetLength(1);
+
+for (int i = 0; i < row; i++)
+{
+for (int j = 0; j < column; j++)
+Console.Write($" {array[i, j], 2} "); // не дает слипнуться  
+Console.WriteLine(); // для перевода курсора на следующую строку
+}
+Console.WriteLine();// не дает слипнуться  
+}
+
+void SortToLower(int[,] array) // ФУНКЦИЯ сортировки элементов Matrix к меньшему
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int element = 0; element < array.GetLength(1) - 1; element++)
+            {
+                if (array[i, element] < array[i, element + 1])
+                {
+                    int temp = array[i, element + 1];
+                    array[i, element + 1] = array[i, element];
+                    array[i, element] = temp;
+                }
+            }
+        }
+    }
+}
+
+*/
+
+
+
+
+
 /*
 // Задача 55: Задайте двумерный массив. Напишите программу,
 // которая заменяет строки на столбцы. В случае, если это
@@ -1583,6 +1657,86 @@ void ReplaceRowsToColumns(int[,] array) //Метод меняет строки �
         }
 }
 */
+
+
+
+
+/*
+// Задача 56: Задайте прямоугольный двумерный массив. 
+// Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+// Например, задан массив:
+
+// 1 4 7 2
+
+// 5 9 2 3
+
+// 8 4 2 4
+
+// 5 2 6 7
+
+// Программа считает сумму элементов в каждой строке 
+// и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+
+int[,] matrix = new int[4, 4];
+GetRandomArray(matrix);
+PrintArray(matrix);
+Console.WriteLine();
+FindRowMinSumElements(matrix);
+
+
+
+void FindRowMinSumElements(int[,] matrix) //ФУНКЦИЯ поиска и вывода строки с минимальной суммой чисел
+{
+    int minRow = 0;
+    int minSumRow = 0;
+    int sumRow = 0;
+    for (int i = 0; i < matrix.GetLength(1); i++)
+    {
+        minRow += matrix[0, i];
+    }
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++) sumRow += matrix[i, j];
+        if (sumRow < minRow)
+        {
+            minRow = sumRow;
+            minSumRow = i;
+        }
+        sumRow = 0;
+    }
+    Console.Write($"{minSumRow + 1} строка"); // указывает на правильную строку от нулевого индекса
+}
+
+ void GetRandomArray(int[,] matrix) // ФУНКЦИЯ cсоздает рандомный двумерный массив
+{
+  for (int i = 0; i < matrix.GetLength(0); i++)
+  {
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {
+      matrix[i, j] = new Random().Next(1, 9);
+    }
+  }
+}
+
+void PrintArray(int[,] matrix) // ФУНКЦИЯ выводит преобразованный двумерный массив  
+{
+int row = matrix.GetLength(0);// возвращает кортеж 
+int column = matrix.GetLength(1);
+
+for (int i = 0; i < row; i++)
+{
+for (int j = 0; j < column; j++)
+Console.Write($" {matrix[i, j], 2} "); // не дает слипнуться  
+Console.WriteLine(); // для перевода курсора на следующую строку
+}
+Console.WriteLine();// не дает слипнуться  
+}
+
+
+*/
+
+
+
 
 
 
@@ -2036,8 +2190,45 @@ count = 1;
 Console.WriteLine($"число  {currentNum}   встречается раз: {count}");
 }
 
+void SortToLower(int[,] array) // ФУНКЦИЯ сортировки элементов Matrix к меньшему
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int element = 0; element < array.GetLength(1) - 1; element++)
+            {
+                if (array[i, element] < array[i, element + 1])
+                {
+                    int temp = array[i, element + 1];
+                    array[i, element + 1] = array[i, element];
+                    array[i, element] = temp;
+                }
+            }
+        }
+    }
+}
 
+void FindRowMinSumElements(int[,] matrix) //ФУНКЦИЯ поиска и вывода строки с минимальной суммой чисел
+{
+    int minRow = 0;
+    int minSumRow = 0;
+    int sumRow = 0;
+    for (int i = 0; i < matrix.GetLength(1); i++)
+    {
+        minRow += matrix[0, i];
+    }
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++) sumRow += matrix[i, j];
+        if (sumRow < minRow)
+        {
+            minRow = sumRow;
+            minSumRow = i;
+        }
+        sumRow = 0;
+    }
+    Console.Write($"{minSumRow + 1} строка"); // указывает на правильную строку от нулевого индекса
+}
 
-*/
-
-
+ */
