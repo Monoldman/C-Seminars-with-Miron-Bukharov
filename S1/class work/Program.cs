@@ -1889,6 +1889,8 @@ void GetRandomArray2D(int[,] array) // ФУНКЦИЯ генерации РАН�
     } 
 }
 
+
+
 Console.Clear(); //очищает консоль
 
 void GetRandomArray(int[,] array) // ФУНКЦИЯ cсоздает рандомный двумерный массив
@@ -1901,6 +1903,44 @@ void GetRandomArray(int[,] array) // ФУНКЦИЯ cсоздает рандом
     }
   }
 }
+
+
+
+
+void PrintMatrix(int[,] array) // ФУНКЦИЯ выводит преобразованный двумерный массив  
+{
+    int row = array.GetLength(0);// возвращает кортеж 
+    int column = array.GetLength(1);
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        Console.Write($" {array[i, j], 2} "); // не дает слипнуться  
+        Console.WriteLine(); // для перевода курсора на следующую строку
+    }
+        Console.WriteLine();// не дает слипнуться  
+}
+
+
+
+int rows = 4;
+int columns = 4;
+int min = 1;
+int max = 9;
+int[,] GetRandomArray(int rows, int columns, int min, int max) // ФУНКЦИЯ cсоздает рандомный двумерный массив c вводом извне
+{
+    int[,] arrayRandom = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            arrayRandom[i, j] = new Random().Next(min, max);
+        }
+    }
+    return arrayRandom;
+}
+
+
 
 double[] FindAverage(int[,] array) // ФУНКЦИЯ находит среднее арифм. в столбцах двумерного массива
 {
@@ -1995,6 +2035,8 @@ count = 1;
 }
 Console.WriteLine($"число  {currentNum}   встречается раз: {count}");
 }
+
+
 
 */
 
