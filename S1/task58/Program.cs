@@ -58,7 +58,7 @@ void GetRandomArray(int[,] array) // ФУНКЦИЯ cсоздает рандом
   }
 }
 
-int[,] MultiplyArray(int[,] firstArray, int[,] secondArray)
+int[,] MultiplyArray(int[,] firstArray, int[,] secondArray) // ФУНКЦИЯ умножения массивов мнежу собой 
 {
   int newRow, newColumn;
   if (firstArray.GetLength(0) > secondArray.GetLength(0))
