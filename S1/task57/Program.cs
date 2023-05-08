@@ -1,18 +1,35 @@
-﻿// Задача 55: Задайте двумерный массив. Напишите программу,
-// которая заменяет строки на столбцы. В случае, если это
-// невозможно, программа должна вывести сообщение для
-// пользователя.
-
-
+﻿//Задача 57:
+// Составить частотный словарь элементов двумерного массива.
+// Частотный словарь содержит информацию о том, сколько раз встречается элемент входных данных.
+// Набор данных
+// Частотный массив
+// { 1, 9, 9, 0, 2, 8, 0, 9 }
+// 0 встречается 2 раза
+// 1 встречается 1 раз
+// 2 встречается 1 раз
+// 8 встречается 1 раз
+// 9 встречается 3 раза
+// 1, 2, 3
+// 4, 6, 1
+// 2, 1, 6
+// 1 встречается 3 раза
+// 2 встречается 2 раз
+// 3 встречается 1 раз
+// 4 встречается 1 раз
+// 6 встречается 2 раза
 
 Console.Clear(); //очищает консоль
 
 int[,] array = new int[4, 4];
 GetRandomArray(array); 
 PrintArray(array);
-ReplaceRowsToColumns(array); 
-PrintArray(array);
-// Console.WriteLine(string.Join("  ", FindAverage(array)));
+
+int[] arr = MatrixToArray(array);
+System.Console.WriteLine();
+
+Array.Sort(arr);
+System.Console.WriteLine();
+FreqDictionary(arr);
 
 
 void PrintArray(int[,] array) // ФУНКЦИЯ выводит преобразованный двумерный массив  
@@ -35,22 +52,45 @@ void GetRandomArray(int[,] array) // ФУНКЦИЯ cсоздает рандом
   {
     for (int j = 0; j < array.GetLength(1); j++)
     {
-      array[i, j] = new Random().Next(-5, 5);
+      array[i, j] = new Random().Next(1, 9);
     }
   }
 }
 
-void ReplaceRowsToColumns(int[,] array) //Метод меняет строки на колонки 
+int[] MatrixToArray(int[,] array) //Функция конвертации двухмерного массива в одномерный 
 {
-    int length = array.GetLength(0); //длина для строк и столбцов будет одинаковая 
-
-        for (int i = 0; i < length; i++) //length - 1 вводится чтобы не было двойной замены
+    int [] collection = new int [array.Length];
+    int count = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            for (int j = 0; j < i; j++) //i + 1 вводится, чтобы не было двойной замены
-            {
-                int temp = array[i, j];
-                array[i, j] = array[j, i];
-                array[j, i] = temp;
-            }
+            collection [count] = array[i,j];
+            count++;
         }
+
+    }
+    return collection;
 }
+
+void FreqDictionary(int[] array)//Функция считает частотность элементов в 2х мерном массиве
+{
+int count = 1;
+int currentNum = array[0];
+for (int i = 1; i < array.Length; i++)
+{
+if (array[i] == currentNum)
+{
+count++;
+}
+else
+{
+Console.WriteLine($"число  {currentNum}   встречается раз: {count}");
+currentNum = array[i];
+count = 1;
+}
+}
+Console.WriteLine($"число  {currentNum}   встречается раз: {count}");
+}
+
+
