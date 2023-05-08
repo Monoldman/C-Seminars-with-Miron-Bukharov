@@ -7,8 +7,8 @@
 // 15 18
 
 
-int[,] firstArr = CreateArray(Prompt("Введите количество строк массива1: "), Prompt("Введите количество столбцов массива1: "));
-int[,] secondArr = CreateArray(Prompt("Введите количество строк массива2: "), Prompt("Введите количество столбцов массива2: "));
+int[,] firstArr = CreateArray(Prompt("Введите количество строк массива 1: "), Prompt("Введите количество столбцов массива 1: "));
+int[,] secondArr = CreateArray(Prompt("Введите количество строк массива 2: "), Prompt("Введите количество столбцов массива 2: "));
 Console.WriteLine("Первый массив:");
 FillArrayRandom(firstArr);
 PrintArray(firstArr);
