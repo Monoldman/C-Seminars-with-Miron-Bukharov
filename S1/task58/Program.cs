@@ -7,27 +7,27 @@
 // 15 18
 
 
-int[,] firstArr = CreateArray(Prompt("Введите количество строк массива 1: "), Prompt("Введите количество столбцов массива 1: "));
-int[,] secondArr = CreateArray(Prompt("Введите количество строк массива 2: "), Prompt("Введите количество столбцов массива 2: "));
+int[,] firstArray = CreateArray(InsertNumber("Введите количество строк массива 1: "), InsertNumber("Введите количество столбцов массива 1: "));
+int[,] secondArray = CreateArray(InsertNumber("Введите количество строк массива 2: "), InsertNumber("Введите количество столбцов массива 2: "));
 Console.WriteLine("Первый массив:");
-FillArrayRandom(firstArr);
-PrintArray(firstArr);
+GetRandomArray(firstArray);
+PrintArray(firstArray);
 Console.WriteLine("Второй массив:");
-FillArrayRandom(secondArr);
-PrintArray(secondArr);
+GetRandomArray(secondArray);
+PrintArray(secondArray);
 Console.WriteLine("Результирующая матрица:");
-int[,] newArray = MultiplyArray(firstArr, secondArr);
+int[,] newArray = MultiplyArray(firstArray, secondArray);
 PrintArray(newArray);
 
 
-int Prompt(string message)
+int InsertNumber(string message)
 {
   Console.Write(message);
   int result = Convert.ToInt32(Console.ReadLine());
   return result;
 }
 
-int[,] CreateArray(int m, int n)
+int[,] CreateArray(int m, int n) // ФУНКЦИЯ создает массив
 {
   int[,] array = new int[m, n];
   return array;
@@ -47,48 +47,46 @@ Console.WriteLine(); // для перевода курсора на следую
 Console.WriteLine();// не дает слипнуться  
 }
 
-
-int[,] FillArrayRandom(int[,] array)
+void GetRandomArray(int[,] array) // ФУНКЦИЯ cсоздает рандомный двумерный массив
 {
   for (int i = 0; i < array.GetLength(0); i++)
   {
     for (int j = 0; j < array.GetLength(1); j++)
     {
-      array[i, j] = new Random().Next(1, 10);
+      array[i, j] = new Random().Next(1, 9);
     }
   }
-  return array;
 }
 
-int[,] MultiplyArray(int[,] firstArr, int[,] secondArr)
+int[,] MultiplyArray(int[,] firstArray, int[,] secondArray)
 {
-  int newRow, newCol;
-  if (firstArr.GetLength(0) > secondArr.GetLength(0))
+  int newRow, newColumn;
+  if (firstArray.GetLength(0) > secondArray.GetLength(0))
   {
-    newRow = secondArr.GetLength(0);
+    newRow = secondArray.GetLength(0);
   }
   else
   {
-    newRow = firstArr.GetLength(0);
+    newRow = firstArray.GetLength(0);
   }
-  if (firstArr.GetLength(1) > secondArr.GetLength(1))
+  if (firstArray.GetLength(1) > secondArray.GetLength(1))
   {
-    newCol = secondArr.GetLength(1);
+    newColumn = secondArray.GetLength(1);
   }
   else
   {
-    newCol = firstArr.GetLength(1);
+    newColumn = firstArray.GetLength(1);
   }
 
-  int[,] newArray = new int[newRow, newCol];
+  int[,] newArray = new int[newRow, newColumn];
 
   for (int i = 0; i < newRow; i++)
   {
-    for (int j = 0; j < newCol; j++)
+    for (int j = 0; j < newColumn; j++)
     {
       for (int e = 0; e < newRow; e++)
       {
-        newArray[i, j] += firstArr[i, e] * secondArr[e, j];
+        newArray[i, j] += firstArray[i, e] * secondArray[e, j]; // формула умножения массивов
       }
     }
   }
