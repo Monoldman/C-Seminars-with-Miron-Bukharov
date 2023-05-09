@@ -1940,8 +1940,28 @@ int[,] MultiplyArray(int[,] firstArray, int[,] secondArray) // ФУНКЦИЯ у
 
 
 
- /*
+/*
+// М А С С И В  Ы:
 
+int [] array1 = new int [0];          // одномерный массив
+int [,] array2 = new int [0,1];       // двумерный массив
+int [,,] array3 = new int [0,1,1];    // трехмерный массив (редко используется)
+
+for (int i = 0; i < array3.GetLength(0); i++) // трехмерный массив
+{
+    for (int j = 0; j < array3.GetLength(1); j++)
+    {
+        for (int k = 0; k < array3.GetLength(2); k++)
+        {
+            array3 [i,j,k] = new Random().Next(10,40);
+        }
+    }
+}
+*/
+
+
+
+ /*
 // Ф  У  Н  К  Ц  И  И :
 
 
@@ -2371,6 +2391,7 @@ int[,] MultiplyArray(int[,] firstArray, int[,] secondArray) // ФУНКЦИЯ у
   }
   return newArray;
 }
+
 */
 
 
