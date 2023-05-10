@@ -12,8 +12,8 @@ int num2 = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(PowerNum(num1, num2));
 
-int PowerNum(int a, int b) 
+int PowerNum(int a, int b)
 {
-if(b == 0) return 1; // пока степень(число) не исчерпается число в степени 0 = 1
-else return a * PowerNum(a, b - 1);
+    if (b == 0) return 1; // пока степень(число) не исчерпается число в степени 0 = 1
+    else return a * PowerNum(a, b - 1);
 }
