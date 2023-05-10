@@ -7,25 +7,25 @@
 Console.Clear();
 int n = GetUserNumber("Введите число N: ");
 int m = GetUserNumber("Введите число M: ");
-if (n  < 1 || m  < 1) // проверка числа, является ли оно натуральным
+if (n < 1 || m < 1) // проверка числа, является ли оно натуральным
 {
-  Console.WriteLine("Ввдите положительное число!");
-  return;
+    Console.WriteLine("Ввдите положительное число!");
+    return;
 }
 Console.WriteLine(SumOfNaturalDigits(n, m));
 
 
 int GetUserNumber(string message)// Метод получения числа от пользователя
 {
-  Console.Write(message);
-  int result = Convert.ToInt32(Console.ReadLine());
-  return result;
+    Console.Write(message);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
 }
 
 int SumOfNaturalDigits(int n, int m) //МЕТОД рекурсии, сумма натуральных чисел  
 {
-  if (n == m) return n;
-  else return SumOfNaturalDigits(n + 1, m) + n;
+    if (n == m) return n;
+    else return SumOfNaturalDigits(n + 1, m) + n;
 }
 
 
