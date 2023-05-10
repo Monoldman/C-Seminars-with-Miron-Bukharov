@@ -7,10 +7,10 @@
 Console.Clear();
 int m = GetUserNumber("Введите число M: ");
 int n = GetUserNumber("Введите число N: ");
-if (n  < 1 || m  < 1) // проверка: исключение отрицательных чисел
+if (n < 1 || m < 1) // проверка: исключение отрицательных чисел
 {
-  Console.WriteLine("Ввдите положительное число!");
-  return;
+    Console.WriteLine("Ввдите положительное число!");
+    return;
 }
 Console.WriteLine($"A({m},{n}) = {Akkerman(m, n)}");
 
@@ -18,15 +18,15 @@ Console.WriteLine($"A({m},{n}) = {Akkerman(m, n)}");
 
 int GetUserNumber(string message) // Метод получения числа от пользователя
 {
-  Console.Write(message);
-  int result = Convert.ToInt32(Console.ReadLine());
-  return result;
+    Console.Write(message);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
 }
 
 int Akkerman(int m, int n) // Метод рекурсии, вычисление функции Акермана
 {
-  if (m == 0) return n + 1;
-  if (m > 0 && n == 0) return Akkerman(m - 1, 1);
-  else return Akkerman(m - 1, Akkerman(m, n - 1));
+    if (m == 0) return n + 1;
+    if (m > 0 && n == 0) return Akkerman(m - 1, 1);
+    else return Akkerman(m - 1, Akkerman(m, n - 1));
 }
 
