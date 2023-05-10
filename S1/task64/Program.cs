@@ -7,29 +7,30 @@
 
 
 
-Console.Clear();
+Console.Clear();//очистить консоль
+int n = GetUserNuber("Введите число: ");
+if (n < 1) // проверка числа, является ли оно натуральным
+{
+  Console.WriteLine("Ввдите положительное число!");
+  return;
+}
+Console.WriteLine(NaturalNumber(n, 1)); // вывод всех числе до 1, включая 1 
+
+
+
 int GetUserNuber(string message) //получить число от пользователя
 {
   Console.Write(message);
   int result = Convert.ToInt32(Console.ReadLine());
   return result;
 }
-
-int n = GetUserNuber("Введите число: ");// проверка числа, является ли оно натуральным
-if (n < 1)
-{
-  Console.WriteLine("Ввдите положительное число!");
-  return;
-}
-
-int NaturalNumber(int n, int m)// МЕТОД рекурсия, числа от 1 до N
+int NaturalNumber(int n, int m)// МЕТОД рекурсия, вывод числа от 1 до N
 {
   if (n == m) return n;
   else Console.Write($"{NaturalNumber(n, m + 1)}, ");
   return m;
 }
 
-Console.WriteLine(NaturalNumber(n, 1)); // вывод всех числе до 1, включая 1 
 
 
 

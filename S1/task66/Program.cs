@@ -7,6 +7,11 @@
 Console.Clear();
 int n = GetUserNumber("Введите число N: ");
 int m = GetUserNumber("Введите число M: ");
+if (n  < 1 || m  < 1) // проверка числа, является ли оно натуральным
+{
+  Console.WriteLine("Ввдите положительное число!");
+  return;
+}
 Console.WriteLine(SumOfNaturalDigits(n, m));
 
 
