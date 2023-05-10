@@ -5,9 +5,9 @@
 // A = 2; B = 3 -> 8
 
 
-Console.Write("Введите число A: ");
+Console.Write("Введите число а: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите число B: ");
+Console.Write("Введите степень числа (b): ");
 int num2 = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(PowerNum(num1, num2));
