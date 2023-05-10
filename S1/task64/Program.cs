@@ -17,7 +17,6 @@ if (n < 1) // проверка числа, является ли оно нату
 Console.WriteLine(NaturalNumber(n, 1)); // вывод всех числе до 1, включая 1 
 
 
-
 int GetUserNuber(string message) //получить число от пользователя
 {
   Console.Write(message);
