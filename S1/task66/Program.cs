@@ -5,20 +5,24 @@
 // M = 4; N = 8. -> 30
 
 Console.Clear();
-int Prompt(string message)
+int n = GetUserNumber("Введите число N: ");
+int m = GetUserNumber("Введите число M: ");
+Console.WriteLine(SumOfNaturalDigits(n, m));
+
+
+int GetUserNumber(string message)// Метод получения числа от пользователя
 {
   Console.Write(message);
   int result = Convert.ToInt32(Console.ReadLine());
   return result;
 }
 
-int SumOfElements(int n, int m)
+int SumOfNaturalDigits(int n, int m) //МЕТОД рекурсии, сумма натуральных чисел  
 {
   if (n == m) return n;
-  else return SumOfElements(n + 1, m) + n;
+  else return SumOfNaturalDigits(n + 1, m) + n;
 }
 
-int n = Prompt("Input N: ");
-int m = Prompt("Input M: ");
 
-Console.WriteLine(SumOfElements(n, m));
+
+
